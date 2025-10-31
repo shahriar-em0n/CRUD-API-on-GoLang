@@ -15,5 +15,16 @@ func SetupRouter() *mux.Router{
 	repo.Seed()
 
 	svc := services.NewMovieService()
-	h := handlers.NewmovieHnadler()
+	h := handlers.NewmovieHnadler(svc)
+
+	// regiester routes
+
+	r.HandleFunc("/movie", h.GetMovies).Methods("GET")
+	r.HandleFunc("/movie/{id}", h.GetMovie).Methods("GET")
+	r.HandleFunc("/movie", h.CreateMovie).Methods("POST")
+	r.HandleFunc("/movie/{id}", h.UpdateMovie).Methods("PUT")
+	r.HandleFunc("/movie/{id}", h.DeleteMovie).Methods("DELETE")
+
+	return  r
 }
+

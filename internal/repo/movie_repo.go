@@ -4,7 +4,7 @@ import (
 	"CRUD-API/internal/models"
 	"strconv"
 
-	"github.com/go-playground/validator/v10/translations/id"
+	// "github.com/go-playground/validator/v10/translations/id"
 )
 
 var movies []models.Movie
