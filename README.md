@@ -1,104 +1,97 @@
-# 🎬 Go Movie REST API (with Gorilla Mux)
+# 🎬 Go Movie API — Production-Grade Folder Structure (Gorilla Mux)
 
-A simple RESTful API built using **Go (Golang)** and the **Gorilla Mux** router.  
-This project demonstrates basic CRUD operations (Create, Read, Update, Delete) for managing movies.
-
----
-
-## 🚀 Features
-- ✅ GET all movies
-- ✅ GET a single movie by ID
-- ✅ POST (create) a new movie
-- ✅ PUT (update) an existing movie
-- ✅ DELETE a movie by ID
-- ⚙️ Uses `gorilla/mux` for routing
-- 🧠 JSON encoding/decoding for clean API responses
+This project is a refactored version of your single-file Gorilla Mux Go application, organized into a **professional production-grade structure** with clear separation of layers (handlers, services, repository, routes, etc.).
 
 ---
 
-## 🧩 Tech Stack
-- **Language:** Go (Golang)
-- **Framework:** Gorilla Mux
-- **Libraries:** encoding/json, net/http, log, fmt
+## 🏗 Folder Structure
 
----
-
-## 🛠️ Installation & Setup
-
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/yourusername/go-movie-api.git
-cd go-movie-api
+```
+go-movie-api/
+├── cmd/
+│   └── server/
+│       └── main.go
+├── internal/
+│   ├── handlers/
+│   │   └── movie_handler.go
+│   ├── models/
+│   │   └── movie.go
+│   ├── repository/
+│   │   └── movie_repo.go
+│   ├── routes/
+│   │   └── router.go
+│   └── services/
+│       └── movie_service.go
+├── pkg/
+│   └── response/
+│       └── response.go
+├── go.mod
+└── README.md
 ```
 
-### 2️⃣ Initialize Go Module
+---
+
+## 🚀 Quick Start
+
+### 1️⃣ Clone or Download
+
 ```bash
-go mod init go-movie-api
+git clone https://github.com/shahriar-em0n/CRUD-API-on-GoLang.git
+cd CRUD-API-on-GoLang
 ```
 
-### 3️⃣ Install Dependencies
+### 2️⃣ Initialize Dependencies
+
 ```bash
-go get github.com/gorilla/mux
 go mod tidy
 ```
 
-### 4️⃣ Run the Server
+### 3️⃣ Run the Server
+
 ```bash
-go run main.go
+go run cmd/server/main.go
 ```
 
-Server will start at:
-```
-http://localhost:8080
-```
+Server will start at:  
+👉 **http://localhost:8080**
 
 ---
 
-## 🧠 API Endpoints
+## 🔥 API Endpoints
 
 | Method | Endpoint | Description |
 |--------|-----------|-------------|
-| GET | `/movies` | Get all movies |
-| GET | `/movies/{id}` | Get a movie by ID |
-| POST | `/movies` | Create a new movie |
-| PUT | `/movies/{id}` | Update an existing movie |
-| DELETE | `/movies/{id}` | Delete a movie |
+| GET | `/movie` | Get all movies |
+| GET | `/movie/{id}` | Get single movie |
+| POST | `/movie` | Create new movie |
+| PUT | `/movie/{id}` | Update a movie |
+| DELETE | `/movie/{id}` | Delete a movie |
 
-### 🧾 Example JSON Body for POST/PUT:
-```json
-{
-  "isbn": "438227",
-  "title": "Inception",
-  "director": {
-    "firstname": "Christopher",
-    "lastname": "Nolan"
-  }
-}
+---
+
+## 🧩 Dependencies
+
+- **Gorilla Mux** for routing  
+- **Go 1.22+**
+
+Install Gorilla Mux manually (if needed):
+```bash
+go get github.com/gorilla/mux
 ```
 
 ---
 
-## 📦 Example Response
-```json
-[
-  {
-    "id": "1",
-    "isbn": "438227",
-    "title": "Movie One",
-    "director": {
-      "firstname": "Shahriar",
-      "lastname": "Stranger"
-    }
-  }
-]
-```
+## 🧠 Architecture Overview
+
+**Handler → Service → Repository** Pattern
+
+- **Handler:** Handles HTTP requests/responses  
+- **Service:** Contains business logic  
+- **Repository:** Handles data storage (in-memory for now)  
 
 ---
 
-## 🧠 Author
-**Shahriar** — Go Developer & Problem Solver 🚀
+## 📄 License
 
----
-
-## 🪪 License
-This project is open source and available under the [MIT License](LICENSE).
+MIT License © 2025  
+Developed by **Shahriar** 🚀
