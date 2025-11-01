@@ -1,4 +1,4 @@
-# 🎬 Go Movie API — Production-Grade Folder Structure (Gorilla Mux)
+# 🎬 Go Movie API - Production-Grade Folder Structure (Gorilla Mux)
 
 This project is a refactored version of your single-file Gorilla Mux Go application, organized into a **professional production-grade structure** with clear separation of layers (handlers, services, repository, routes, etc.).
 
