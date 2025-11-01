@@ -10,7 +10,7 @@ This project is a refactored version of your single-file Gorilla Mux Go applicat
 go-movie-api/
 ├── cmd/
 │   └── server/
-│       └── main.go
+│       └── serv.go
 ├── internal/
 │   ├── handlers/
 │   │   └── movie_handler.go
@@ -26,6 +26,7 @@ go-movie-api/
 │   └── response/
 │       └── response.go
 ├── go.mod
+├── main.go
 └── README.md
 ```
 
@@ -49,7 +50,7 @@ go mod tidy
 ### 3️⃣ Run the Server
 
 ```bash
-go run cmd/server/main.go
+go run main.go
 ```
 
 Server will start at:  

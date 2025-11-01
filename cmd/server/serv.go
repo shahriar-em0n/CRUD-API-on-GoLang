@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"CRUD-API/internal/repo"
@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-func main() {
+func Serv() {
 	repo.SeedData()
 
 	router := routes.SetupRouter()
