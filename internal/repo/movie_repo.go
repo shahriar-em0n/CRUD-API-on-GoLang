@@ -10,7 +10,7 @@ import (
 var movies []models.Movie
 
 // Seed initial movies (same data you provided)
-func Seed() {
+func SeedData() {
 	movies = []models.Movie{
 		{ID: "1", IsBn: "438227", Title: "Movie One", Director: &models.Director{FirstName: "Shahriar", LastName: "Stranger"}},
 		{ID: "2", IsBn: "739012", Title: "Echoes of Time", Director: &models.Director{FirstName: "Hakim", LastName: "Akash"}},

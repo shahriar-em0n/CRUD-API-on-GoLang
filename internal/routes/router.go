@@ -12,7 +12,7 @@ import (
 func SetupRouter() *mux.Router{
 	r := mux.NewRouter()
 
-	repo.Seed()
+	repo.SeedData()
 
 	svc := services.NewMovieService()
 	h := handlers.NewmovieHnadler(svc)
